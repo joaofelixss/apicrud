@@ -33,7 +33,8 @@ class PostController extends Controller
      */
     public function update(StorePostRequest $request, Post $post)
     {
-        //
+        $post->update($request->validated());
+        return new PostResource($post);
     }
 
     /**
